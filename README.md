@@ -5,7 +5,7 @@ Soon to be updated:
 
 Automated Moderation updates
 - Group Only instances
-- Auto Kicks
+- Auto Kicks < I need to let you know only group owners in there own group instances can use this function.
 - Timed Auto Warns
 - Anti Crash (may need more work)
 
