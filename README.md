@@ -15,7 +15,7 @@ It runs entirely within VRChat’s allowed systems — no client modification, n
 | Category | Description |
 |-----------|-------------|
 | **Logging** | Real‑time instance logging of joins, leaves, and moderation actions. |
-| **Group Moderation** | Auto‑kick, auto‑ban, and raid detection using group rules. |
+| **Group Moderation** | Auto‑ban, and raid detection using group rules. |
 | **World Moderation** | Calls exposed Udon events (e.g., ForceTeleport, MoveToBanArea) when the world creator has granted permission. |
 | **Blacklist System** | Blocks users, avatars, or groups listed in configurable text files. |
 | **Flagged Words** | Warns moderators when flagged terms appear in chat or logs. |
