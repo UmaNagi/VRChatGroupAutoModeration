@@ -154,11 +154,11 @@ The app will:
 #### **4. Automated Actions**
 The app can automatically:
 
-- Kick or ban users matching blacklist rules  
+- ban users matching blacklist rules  
 - Warn users for flagged words  
 - Detect raid‑like behavior  
 - Trigger exposed world moderation (ModernUI)  
-- Teleport users to restricted areas (if exposed)  
+- Teleport users to restricted areas (if exposed)  <function not added yet.
 - Log all actions for transparency  
 
 #### **5. Stop Logging**
