@@ -1,34 +1,90 @@
-:clipboard: **VRChat Group Auto Moderation — What is this?**
+# 🐇 VRChat Group Auto Moderation  
+A lightweight, safe, and ToS‑compliant **automoderation tool** for VRChat group owners.  
+Created by **Loppy The Bunny** to help group moderators protect their communities inside group instances.
 
-Hey everyone! This is a tool that helps keep our group's instances safe by automatically watching who joins and taking action on bad actors.
+---
 
-**What it does:**
-- :green_circle: **Logs everyone** who joins the instance in real time
-- :no_entry_sign: **Auto-bans** people who are in blacklisted groups (like raider/troll groups)
-- :singer: **Auto-bans** people wearing blacklisted avatars (by avatar name or ID)
-- :shield: **Protects staff** — group staff and listed mods are never banned
-- :warning: **Flags troublemakers** — warns (no ban) when someone's username, bio, or status contains a flagged word
-- :boom: **Catches Udon crashers/exploits** and force-teleport abuse (and bans whoever teleports you to a world ban zone)
-- :police_officer: **Staff activity alerts** — pings the log when a group staff member warns / kicks / bans / unbans someone
-- :bar_chart: Shows a live list of current players, banned players, and world info
+## 🧩 Overview  
+This application automates moderation tasks for VRChat groups and integrates with exposed world‑side moderation systems (such as **ModernUI**) when permitted.  
+It runs entirely within VRChat’s allowed systems — no client modification, no reverse‑engineering, and no platform interference.
 
-**The app is now split into tabs:**
-- **Dashboard** — your own account info
-- **World Information** — full world details + the live player list (each player has a **Blacklist avatar** button)
-- **Group Related** — your owned group + staff groups
-- **Blacklist** — blacklisted groups, avatars, and flagged words
-- **Moderations** — ban reasons + banned players
-- **Logs** — the full activity log
+---
 
-**The lists you can edit:**
-- **Blacklisted groups** — paste a group ID (`grp_...`) and hit **Add group ID** to auto-ban anyone in that group
-- **Blacklisted avatars** — type an avatar name or ID (`avtr_...`) and hit **Add avatar** to auto-ban anyone wearing it
-- **Flagged words** — add a word to get a warning (not a ban) when it shows up in someone's profile
+## ⚙️ Features  
 
-To remove something, click it in the list and press **Remove**.
+| Category | Description |
+|-----------|-------------|
+| **Logging** | Real‑time instance logging of joins, leaves, and moderation actions. |
+| **Group Moderation** | Auto‑kick, auto‑ban, and raid detection using group rules. |
+| **World Moderation** | Calls exposed Udon events (e.g., ForceTeleport, MoveToBanArea) when the world creator has granted permission. |
+| **Blacklist System** | Blocks users, avatars, or groups listed in configurable text files. |
+| **Flagged Words** | Warns moderators when flagged terms appear in chat or logs. |
+| **Staff Management** | Recognizes staff groups and prevents accidental bans of authorized moderators. |
+| **Dashboard** | Displays current world, group, and instance status. |
+| **World Information Tab** | Shows world metadata (name, author, capacity, tags, and current players). |
+| **Moderations Tab** | Lists banned players and reasons for moderation actions. |
+| **Logs Tab** | Displays detailed event history with timestamps and color‑coded entries. |
 
-**Note:** Each person's blacklists are private to their own account — your lists won't show up for anyone else, and theirs won't show up for you.
+---
 
-You have to be **logged in** with your VRChat account for moderation to work.
+## 🧾 Compliance  
+This project complies with **VRChat Terms of Service §13.2** and **Community Guidelines**.  
+It does **not**:
+- Interfere with VRChat’s platform systems  
+- Circumvent access controls  
+- Modify the VRChat client  
+- Collect personal data (see §8.10)  
+- Access staff‑only Udon events  
 
-psst from loppy — the reason it says "keep file" is because i haven't gotten it signed by microsoft yet, that's the only reason. i also took an extra security step to make sure the app doesn't function unless you're actually signed into it and the app is detected as open. :blue_heart:
+It only uses:
+- Group moderation APIs  
+- Exposed world moderation Udon events  
+- Instance‑level logging  
+- Publicly accessible data  
+
+---
+
+## 🛡️ Safety  
+- All moderation actions occur **inside your group’s instances**.  
+- World moderation is used **only when intentionally exposed** by the world creator.  
+- The app never touches VRChat’s platform‑level moderation or user data.  
+- Designed for **group safety**, not for abuse.
+
+---
+
+## 🧠 Architecture  
+| File | Purpose |
+|------|----------|
+| `VRChatInstanceLogger.cs` | Core logic for instance detection and logging. |
+| `InstanceDetector.cs` | Monitors player joins/leaves and triggers automod checks. |
+| `VRChatAPI.cs` | Handles group moderation calls and world‑side event triggers. |
+| `LoggerEngine.cs` | Manages log formatting and output. |
+| `Program.cs` | Application entry point. |
+| `UiTheme.cs` | Defines the green/white interface styling. |
+| `group_blacklist.txt`, `blacklist.txt` | Lists of banned groups and avatars. |
+| `flagged_words.txt` | Words that trigger warnings. |
+| `group_staff.txt` | Staff group definitions to prevent false bans. |
+| `webhook_config.txt` | Optional Discord webhook integration for alerts. |
+| `world_restricted_areas.txt` | Defines world zones for teleport moderation. |
+
+---
+
+## 🧰 Requirements  
+- Windows 10/11  
+- .NET Framework 4.8+  
+- VRChat Group Ownership  
+- Optional: a world exposing moderation Udon events (e.g., ModernUI)
+
+---
+
+## 🐾 Credits  
+Developed by **Loppy The Bunny**  
+- Twitch: twitch.tv/loppythebunny [(twitch.tv in Bing)](https://www.bing.com/search?q="https%3A%2F%2Ftwitch.tv%2Floppythebunny")  
+- YouTube: youtube.com/@loppythebunny [(youtube.com in Bing)](https://www.bing.com/search?q="https%3A%2F%2Fyoutube.com%2F%40loppythebunny")  
+- Kick: kick.com/loppythebunny [(kick.com in Bing)](https://www.bing.com/search?q="https%3A%2F%2Fkick.com%2Floppythebunny")
+
+---
+
+## 💬 Support  
+Join the Discord community for suggestions and feedback.  
+This project welcomes contributions that improve safety, performance, or UI clarity.
