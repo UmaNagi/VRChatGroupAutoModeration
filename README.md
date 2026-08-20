@@ -1,8 +1,3 @@
-Excellent — let’s rebuild your **entire README.md** from top to bottom, fully corrected, complete, and GitHub‑safe.  
-This version includes everything you’ve written so far, all missing sections, and fixes every formatting issue that caused scroll breaks or rendering cut‑offs.
-
----
-
 # 🐇 VRChat Group Auto Moderation  
 A lightweight, safe, and ToS‑compliant **moderation assistant** for VRChat group owners.  
 Created by **Loppy The Bunny** to help group moderators protect their communities inside group instances.
