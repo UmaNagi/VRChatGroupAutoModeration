@@ -83,12 +83,6 @@ Developed by **Loppy The Bunny**
 - YouTube: youtube.com/@loppythebunny [(youtube.com in Bing)](https://www.bing.com/search?q="https%3A%2F%2Fyoutube.com%2F%40loppythebunny")  
 - Kick: kick.com/loppythebunny [(kick.com in Bing)](https://www.bing.com/search?q="https%3A%2F%2Fkick.com%2Floppythebunny")
 
----
-
-## 💬 Support  
-Join the Discord community for suggestions and feedback.  
-This project welcomes contributions that improve safety, performance, or UI clarity.
-
 ## 📦 Installation & Usage
 
 ### ⚙️ **Installation**
@@ -188,7 +182,7 @@ This tool:
 - Never accesses staff‑only Udon events  
 - Never collects personal data  
 
-Fully compliant with VRChat ToS §13.2 and §8.10.
+Fully compliant with VRChat ToS §13.2 and §8.10.## 📦 Installation & Usage
 
 ### ⚙️ **Installation**
 
