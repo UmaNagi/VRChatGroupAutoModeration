@@ -88,3 +88,141 @@ Developed by **Loppy The Bunny**
 ## 💬 Support  
 Join the Discord community for suggestions and feedback.  
 This project welcomes contributions that improve safety, performance, or UI clarity.
+
+## 📦 Installation & Usage
+
+### ⚙️ **Installation**
+
+#### **1. Download the Latest Release**
+- Go to the **Releases** page on GitHub.  
+- Download the newest `.zip` or `.exe` build of **VRChat Group Auto Moderation**.
+
+#### **2. Extract the Files**
+Unzip the archive to a folder of your choice, for example:  
+**C:\VRChatGroupAutoModeration\\**
+
+#### **3. Run the Application**
+Open **VRChatGroupAutoModeration.exe**.  
+On first launch, the app automatically creates configuration files:
+
+- group_blacklist.txt  
+- blacklist.txt  
+- flagged_words.txt  
+- group_staff.txt  
+- webhook_config.txt  
+- world_restricted_areas.txt  
+
+You can edit these files with any text editor.
+
+#### **4. Configure Your Settings**
+Customize each file to fit your group’s needs:
+
+- **Blacklisted groups** – prevents users from banned communities.  
+- **Blacklisted avatars** – blocks avatars flagged for inappropriate content.  
+- **Flagged words** – warns moderators when these appear in chat or logs.  
+- **Staff groups** – defines trusted moderators to avoid false bans.  
+- **Webhook settings** – optional Discord integration for alerts.  
+- **Restricted areas** – defines teleport zones for world moderation.
+
+#### **5. Optional: ModernUI Integration**
+If your world creator exposes moderation Udon events (like `ForceTeleport` or `MoveToBanArea`), the app will detect and use them automatically.  
+No extra setup required. < will be updated next month.
+
+---
+
+### 🧠 **Usage**
+
+#### **1. Start the App**
+Open the program and wait for the dashboard to load.  
+Your **owned group**, **current world**, and **instance status** will appear automatically.
+
+#### **2. Start Logging**
+Click **Start Logging** to begin monitoring your group instance.  
+^You will be asked to login.
+The app will:
+
+- Detect players entering or leaving  
+- Apply automoderation rules  
+- Trigger exposed world moderation events  
+- Log all actions in real time  
+
+#### **3. Explore the Tabs**
+
+| Tab | Description |
+|-----|--------------|
+| **Dashboard** | Overview of current session, world, and moderation status. |
+| **World Information** | Displays world metadata (name, author, tags, player count). |
+| **Group Related** | Shows owned group and staff groups. |
+| **Blacklist** | Manage blacklisted groups, avatars, and flagged words. |
+| **Moderations** | View banned players and reasons for moderation actions. |
+| **Logs** | Displays join/leave events, moderation actions, and timestamps. |
+
+#### **4. Automated Actions**
+The app can automatically:
+
+- Kick or ban users matching blacklist rules  
+- Warn users for flagged words  
+- Detect raid‑like behavior  
+- Trigger exposed world moderation (ModernUI)  
+- Teleport users to restricted areas (if exposed)  
+- Log all actions for transparency  
+
+#### **5. Stop Logging**
+Click **Stop Logging** to end the session safely.  
+Logs are saved automatically in the app directory.
+
+#### **6. Logout Behavior**
+When you click **Logout**, the app **fully wipes all login data and temporary blacklist entries**.  
+This ensures that no sensitive or session‑specific information is retained until you log back in again.  
+Your permanent configuration files remain untouched. < meaning any of those blacklist related txt files will remain until you manually wipe them.
+
+---
+
+### 🛡️ **Safety Notes**
+This tool:
+
+- Operates only works for your group and can run outside your group. <I will be changing this next month to make sure it detect whether or not your outside the group instance. 
+- Uses moderation functions VRChat explicitly allows  
+- Triggers world moderation only when the world creator exposes it  
+- Never modifies the VRChat client  
+- Never accesses staff‑only Udon events  
+- Never collects personal data  
+
+Fully compliant with VRChat ToS §13.2 and §8.10.
+
+### ⚙️ **Installation**
+
+#### **1. Download the Latest Release**
+- Go to the **Releases** page on GitHub.  
+- Download the newest `.zip` or `.exe` build of **VRChat Group Auto Moderation**.
+
+#### **2. Extract the Files**
+Unzip the archive to a folder of your choice, for example:  
+**C:\VRChatGroupAutoModeration\\**
+
+#### **3. Run the Application**
+Open **VRChatGroupAutoModeration.exe**.  
+On first launch, the app automatically creates configuration files:
+
+- group_blacklist.txt  
+- blacklist.txt  
+- flagged_words.txt  
+- group_staff.txt  
+- webhook_config.txt  
+- world_restricted_areas.txt  
+
+You can edit these files with any text editor.
+
+#### **4. Configure Your Settings**
+Customize each file to fit your group’s needs:
+
+- **Blacklisted groups** – prevents users from banned communities.  
+- **Blacklisted avatars** – blocks avatars flagged for inappropriate content.  
+- **Flagged words** – warns moderators when these appear in chat or logs.  
+- **Staff groups** – defines trusted moderators to avoid false bans.  
+- **Webhook settings** – optional Discord integration for alerts.  
+- **Restricted areas** – defines teleport zones for world moderation.
+
+#### **5. Optional: ModernUI Integration**
+If your world creator exposes moderation Udon events (like `ForceTeleport` or `MoveToBanArea`), the app will detect and use them automatically.  
+No extra setup required. < will be updated next month.
