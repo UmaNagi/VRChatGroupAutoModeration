@@ -531,7 +531,7 @@ try { Wait-Process -Id $ProcessId -Timeout 60 -ErrorAction SilentlyContinue } ca
 $copied = $false
 $signature = Get-AuthenticodeSignature -FilePath $Source
 if (-not $AllowUnsigned -and ($signature.Status -ne 'Valid' -or
-    $signature.SignerCertificate.Thumbprint.Replace(' ', '') -ne $SignerThumbprint.Replace(' ', '')) {
+    $signature.SignerCertificate.Thumbprint.Replace(' ', '') -ne $SignerThumbprint.Replace(' ', ''))) {
     Remove-Item -LiteralPath $StageDir -Recurse -Force -ErrorAction SilentlyContinue
     exit 1
 }

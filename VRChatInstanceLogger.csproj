@@ -7,7 +7,7 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <AssemblyName>VRChat Group Auto Moderation</AssemblyName>
-    <Version>1.0.12</Version>
+    <Version>1.0.13</Version>
     <ApplicationIcon>Assets\Icons\AppIcon.ico</ApplicationIcon>
     <Copyright>GitHub: https://github.com/UmaNagi/VRChatGroupAutoModeration</Copyright>
     <RepositoryUrl>https://github.com/UmaNagi/VRChatGroupAutoModeration</RepositoryUrl>
