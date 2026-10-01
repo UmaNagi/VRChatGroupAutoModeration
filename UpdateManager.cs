@@ -453,7 +453,8 @@ signer_thumbprint=
                     FileName = "powershell.exe",
                     Arguments = $"-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File \"{scriptPath}\" " +
                                 $"-ProcessId {pid} -Source \"{stagedExePath}\" -Target \"{targetExe}\" " +
-                                $"-StageDir \"{stageDir}\" -SignerThumbprint \"{signerThumbprint}\"",
+                                $"-StageDir \"{stageDir}\" -SignerThumbprint \"{signerThumbprint}\" " +
+                                $"-AllowUnsigned ${allowUnsignedUpdates}",
                     UseShellExecute = false,
                     CreateNoWindow = true,
                     WindowStyle = ProcessWindowStyle.Hidden
@@ -520,7 +521,8 @@ signer_thumbprint=
     [string]$Source,
     [string]$Target,
     [string]$StageDir,
-    [string]$SignerThumbprint
+    [string]$SignerThumbprint,
+    [bool]$AllowUnsigned
 )
 
 # Wait for the app to fully exit so the exe is unlocked.
@@ -528,7 +530,7 @@ try { Wait-Process -Id $ProcessId -Timeout 60 -ErrorAction SilentlyContinue } ca
 
 $copied = $false
 $signature = Get-AuthenticodeSignature -FilePath $Source
-if ($signature.Status -ne 'Valid' -or
+if (-not $AllowUnsigned -and ($signature.Status -ne 'Valid' -or
     $signature.SignerCertificate.Thumbprint.Replace(' ', '') -ne $SignerThumbprint.Replace(' ', '')) {
     Remove-Item -LiteralPath $StageDir -Recurse -Force -ErrorAction SilentlyContinue
     exit 1
