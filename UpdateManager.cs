@@ -53,6 +53,7 @@ namespace VRChatInstanceLogger
         private string token = string.Empty;
         private string signerThumbprint = string.Empty;
         private bool updateApplied;
+        private bool allowUnsignedUpdates;
 
         // Serializes update checks so a startup auto-check and a manual "Check for Updates"
         // click can't run DownloadAssetAsync at the same time and collide on the staged
@@ -100,6 +101,7 @@ namespace VRChatInstanceLogger
             repo = DefaultRepo;
             token = DefaultToken;
             signerThumbprint = string.Empty;
+            allowUnsignedUpdates = false;
 
             if (!File.Exists(configPath))
             {
@@ -121,6 +123,8 @@ token=
 # Required to enable self-updates. Use the SHA-1 thumbprint of the Authenticode
 # certificate used to sign release executables.
 signer_thumbprint=
+                # Set true only for a trusted private repository when releases are not signed.
+                allow_unsigned_updates=false
 ");
                 return;
             }
@@ -145,6 +149,8 @@ signer_thumbprint=
                     token = value;
                 else if (key == "signer_thumbprint" && !string.IsNullOrWhiteSpace(value))
                     signerThumbprint = value.Replace(" ", string.Empty, StringComparison.Ordinal);
+                else if (key == "allow_unsigned_updates" && bool.TryParse(value, out var allowUnsigned))
+                    allowUnsignedUpdates = allowUnsigned;
             }
         }
 
@@ -163,11 +169,14 @@ signer_thumbprint=
             if (!IsEnabled)
                 return false;
 
-            if (string.IsNullOrWhiteSpace(signerThumbprint))
+            if (string.IsNullOrWhiteSpace(signerThumbprint) && !allowUnsignedUpdates)
             {
                 OnLog?.Invoke("[UPDATE] Skipped: signer_thumbprint is not configured; unsigned updates are disabled.");
                 return false;
             }
+
+            if (string.IsNullOrWhiteSpace(signerThumbprint))
+                OnLog?.Invoke("[UPDATE] Warning: unsigned updates are enabled by local configuration.");
 
             // Don't try to self-update while running under the debugger / dev build.
             if (Debugger.IsAttached)
