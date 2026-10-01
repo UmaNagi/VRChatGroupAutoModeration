@@ -1,0 +1,43 @@
+# ---- Build outputs ----
+bin/
+obj/
+publish/
+dist/
+master-publish/
+*.user
+
+# ---- Visual Studio / Rider ----
+.vs/
+.idea/
+
+# ---- Runtime files copied into the repo root by the dev deploy command ----
+# (the app's exe/runtime files that get copied next to the source during local testing)
+VRChat Group Auto Moderation.exe
+VRChat Group Auto Moderation.dll
+VRChat Group Auto Moderation.deps.json
+VRChat Group Auto Moderation.runtimeconfig.json
+VRChatInstanceLogger.deps.json
+VRChatInstanceLogger.runtimeconfig.json
+*.pdb
+
+# ---- Personal config / data files (auto-generated on first run) ----
+# These contain YOUR group IDs, token, and lists. They must NOT be committed so other
+# users get clean files generated for them on first launch.
+update_config.txt
+owned_group.txt
+staff_groups.txt
+group_staff.txt
+blacklist.txt
+flagged_words.txt
+group_blacklist.txt
+group_blacklist.txt.txt
+restricted_area_markers.txt
+rip_suspicion_markers.txt
+world_restricted_areas.txt
+
+# ---- Local Discord bot configuration ----
+# The bot token is stored in the Windows user environment, not in a file.
+discord-bot/botsettings.json
+
+# ---- Local staging folder for downloaded updates ----
+update/

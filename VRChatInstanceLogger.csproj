@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>VRChat Group Auto Moderation</AssemblyName>
+    <Version>1.0.11</Version>
+    <ApplicationIcon>Assets\Icons\AppIcon.ico</ApplicationIcon>
+    <Copyright>GitHub: https://github.com/UmaNagi/VRChatGroupAutoModeration</Copyright>
+    <RepositoryUrl>https://github.com/UmaNagi/VRChatGroupAutoModeration</RepositoryUrl>
+  </PropertyGroup>
+
+  <!-- Single-file self-contained settings for distributable builds.
+       Only applied when publishing with a runtime identifier (e.g. -r win-x64),
+       so normal dev builds/publishes are unaffected. -->
+  <PropertyGroup Condition="'$(RuntimeIdentifier)' != ''">
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>true</SelfContained>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="world_staff_destroy_guard.cs" />
+    <Compile Remove="discord-bot\**\*.cs" />
+  </ItemGroup>
+
+</Project>

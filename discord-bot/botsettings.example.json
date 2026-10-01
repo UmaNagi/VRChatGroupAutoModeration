@@ -1,0 +1,14 @@
+{
+  "discord": {
+    "guildId": "",
+    "staffRoleId": "",
+    "auditChannelId": ""
+  },
+  "vrchat": {
+    "groupId": ""
+  },
+  "moderation": {
+    "requireBanConfirmation": true,
+    "buttonExpiryMinutes": 10
+  }
+}
