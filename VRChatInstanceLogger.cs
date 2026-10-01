@@ -3245,7 +3245,11 @@ namespace VRChatInstanceLogger
         {
             var path = RuntimePaths.GetFile("group_whitelist.txt");
             if (!File.Exists(path))
+            {
+                File.WriteAllText(path,
+                    "# Group whitelist. Add one group ID per line (starts with grp_).\n");
                 return new List<string>();
+            }
 
             return File.ReadAllLines(path)
                 .Select(line => line.Trim())

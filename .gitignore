@@ -4,6 +4,7 @@ obj/
 publish/
 dist/
 master-publish/
+release/
 *.user
 
 # ---- Visual Studio / Rider ----
