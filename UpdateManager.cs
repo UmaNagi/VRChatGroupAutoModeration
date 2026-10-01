@@ -215,7 +215,7 @@ signer_thumbprint=
 
                 if (latest <= CurrentVersion)
                 {
-                    OnLog?.Invoke("[UPDATE] You are on the latest version.");
+                    OnLog?.Invoke("[UPDATE] No updates available.");
                     ClearStagingIfObsolete(latest);
                     return false;
                 }
