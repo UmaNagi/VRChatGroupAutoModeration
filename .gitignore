@@ -27,6 +27,7 @@ update_config.txt
 owned_group.txt
 staff_groups.txt
 group_staff.txt
+group_whitelist.txt
 blacklist.txt
 flagged_words.txt
 group_blacklist.txt
