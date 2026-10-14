@@ -66,6 +66,7 @@ This project is designed to operate within VRChat's allowed systems:
 - It uses group moderation APIs and intentionally exposed world-side Udon events.
 - World moderation actions are only used when supported by the world creator.
 - Moderation settings remain under the group owner's control.
+- Only works in groups you own or staff for.
 
 Always follow VRChat's Terms of Service and Community Guidelines when using the application.
 
