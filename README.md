@@ -73,7 +73,7 @@ Always follow VRChat's Terms of Service and Community Guidelines when using the 
 
 - Windows 10 or Windows 11
 - A VRChat account with the permissions needed for your group
-- Optional: a world exposing compatible moderation Udon events
+- Optional: Udon Side World Access < this is being updated for world creators at a later date
 - Optional: Discord webhook or separately configured Discord bot
 
 ## 🐾 Credits
